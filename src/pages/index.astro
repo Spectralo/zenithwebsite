@@ -4,29 +4,17 @@ import { Image } from "astro:assets";
 ---
 
 <BaseLayout title='Zenith 2025'>
-   <div class="font-['Poppins']">
+   <div class="font-['Poppins'] ztitle">
       <div class='bg-black h-[165vh] text-white overflow-hidden text-center relative'>
-         <div class='my-[16vh] mx-10'>
-            <h1 class="text-6xl font-['Roboto'] font-extrabold italic">Zenith 2025</h1>
-            <p class="font-['Poppins'] max-w-[700px] inline-block text-xl">
-               Join a <span class='italic font-semibold'>community run</span> hackathon to compete and connect with Hack Club members from across
-               the world!
-            </p>
-            <div class='my-10'>
-               <a
-                  class='bg-transparent text-white px-6 py-2 pt-[.7rem] rounded-full font-bold uppercase border border-zinc-700 animate-[subtle-glow_2s_infinite_alternate] hover:scale-105 transition-transform duration-300'
-                  href='https://hcb.hackclub.com/donations/start/zenithhacks'
-                  target='_blank'
-               >
-                  Donate
-               </a>
-            </div>
+         <div class='my-[16vh] mx-10 scaleit'>
+            <h1 class="text-6xl font-['Poppins'] font-extrabold" style='margin-top : 30vh'>Zenith 2025</h1>
+            <p class="font-['Poppins'] max-w-[700px] inline-block text-xl italic coolgradient">Hack to the zenith ✨</p>
          </div>
          <div
-            class='inline-block h-[220vw] lg:h-[160vw] w-[160vw] bg-white rounded-full m-auto absolute left-[calc(50vw-80vw)]'
-            style='top: calc(100vh - 40vh); box-shadow: -1rem -1rem 4rem #fff, inset 0 0 8rem #333'
+            class='inline-block h-[220vw] lg:h-[160vw] w-[160vw] bg-white rounded-full m-auto absolute left-[calc(50vw-80vw)] coolgradient'
+            style='top: calc(100vh - 40vh); box-shadow: -1rem -1rem 4rem #fff, inset 0 0 8rem #333; opacity : 0'
          >
-            <div class='container mt-[40vh] mx-auto text-black w-[100vw] m-16'>
+            <div class='container mt-[40vh] mx-auto text-black w-[100vw] m-1'>
                <h2 class="text-4xl font-['Roboto'] font-bold text-center mb-4">What is Zenith 2025?</h2>
                <p class='text-center max-w-[700px] mx-auto text-xl leading-7'>
                   Zenith 2025 is a hackathon organised by and for teens. We're coming together for 2 days to share our knowledge and
@@ -105,6 +93,9 @@ import { Image } from "astro:assets";
                   width: 80px;
                }
             }
+            html {
+               background-color: black;
+            }
          </style>
          <Image class='sponsor' src='/logos/disney-on-light.svg' alt='Disney logo' width={400} height={200} />
          <Image class='sponsor' src='/logos/redbull.svg' alt='Redbull logo' width={400} height={200} />
@@ -131,4 +122,14 @@ import { Image } from "astro:assets";
          </div>
       </div>
    </div>
+   <script>
+      import { gsap } from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.fromTo(".coolgradient", { opacity: "0" }, { opacity: "1", duration: 2, repeat: 0 });
+      gsap.to(".scaleit", {
+         scale: 2
+      });
+   </script>
 </BaseLayout>
