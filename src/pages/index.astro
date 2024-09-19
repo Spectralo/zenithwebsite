@@ -5,28 +5,31 @@ import { Image } from "astro:assets";
 
 <BaseLayout title='Zenith 2025'>
    <div class="font-['Poppins'] ztitle">
-      <div class='bg-black h-[165vh] text-white overflow-hidden text-center relative'>
+      <div class='h-[165vh] text-white overflow-hidden text-center relative' style='background-color: #040B16;'>
          <div class='my-[16vh] mx-10 scaleit'>
-            <h1
-               class="text-6xl font-['Poppins'] font-extrabold"
-               style='margin-top : 30vh ; text-shadow: rgba(255,255,255,0.69) 0px 0px 23px;'
+            <div
+               class="text-6xl font-['Space_Grotesk'] font-bold"
+               style='margin-top : 30vh ; text-shadow: rgba(255,255,255,0.69) 0px 0px 23px; color: #f0f2ff; opacity: 1'
             >
-               Zenith
-               <div class='number2' style='display: inline;'>2</div>
-               <div class='number0' style='display: inline;'>0</div>
-               <div class='number2' style='display: inline; margin: 0;'>2</div>
-               <div class='number5' style='display: inline;'>5</div>
-            </h1>
-            <p class="font-['Poppins'] max-w-[700px] inline-block text-xl italic coolgradient reveal" style='opacity: 0;'>
+               Zenith 2025
+            </div>
+            <p
+               class="font-['Instrument_Sans'] max-w-[700px] inline-block text-xl italic coolgradient reveal font-normal"
+               style='opacity: 0;'
+            >
                Hack to the zenith ✨
             </p>
          </div>
-         <div
-            class='inline-block h-[210vw] lg:h-[160vw] w-[160vw] bg-white rounded-full m-auto absolute left-[calc(50vw-80vw)] coolgradient'
-            style='top: calc(100vh - 40vh); box-shadow: -1rem -1rem 4rem #fff, inset 0 0 8rem #333; opacity : 0; margin-top: 10vh;'
-         >
+         <div class='flex' style='display: flex;'>
+            <div
+               class='inline-block h-[210vw] lg:h-[160vw] w-[160vw] bg-white rounded-full m-auto mt-0 absolute left-[calc(50vw-80vw)] coolgradient align-middle strangemoon'
+               style='top: calc(100vh - 40vh); box-shadow: -1rem -1rem 4rem #f0f2ff, inset 0 0 8rem #d5d8e8; opacity : 0; margin-top: 10vh; justify-content: center;;'
+            >
+            </div>
          </div>
       </div>
+
+      <div class='wavydivback bg-gray-950 h-[210vw]'></div>
 
       <div id='about' class='bg-black text-white'>
          <div class='grid grid-cols-1 md:grid-cols-2 min-h-[400px] p-6'>
@@ -138,17 +141,6 @@ import { Image } from "astro:assets";
          });
 
          gsap.fromTo(
-            ".number2",
-            {
-               rotate: 10
-            },
-            {
-               rotate: 0,
-               duration: 0.5
-            }
-         );
-
-         gsap.fromTo(
             ".reveal",
             {
                rotation: 10
@@ -159,5 +151,13 @@ import { Image } from "astro:assets";
             }
          );
       });
+
+      gsap.fromTo(
+         ".strangemoon",
+         {
+            height: "130vw"
+         },
+         { height: "160vw", duration: 1, repeat: 0 }
+      );
    </script>
 </BaseLayout>
